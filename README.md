@@ -19,11 +19,10 @@ docker build -t my-really-cool-docker-image .
 
 #### Run
 
-Example command to run this while mounting AWS credentials as well as the current working directory:
+Example command to run this while mounting the current working directory:
 
 ```
 docker run -it
-  -v $HOME/.aws:/home/jenkins/.aws:ro \
   -v "$PWD":/home/jenkins/$(basename $PWD) \
   my-really-cool-docker-image /bin/bash
 ```
